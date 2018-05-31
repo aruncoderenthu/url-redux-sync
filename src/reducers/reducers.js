@@ -1,5 +1,3 @@
-// import { combineReducers } from 'redux';
-//import mergeWith from "lodash.mergewith";
 
 import {
     TOGGLE,
@@ -18,10 +16,6 @@ export function urlReduxSync(state = initialState, action) {
     switch(action.type) {
 
         case TOGGLE:
-
-            // return mergeWith({}, state, {
-            //     [action.item] : !state[action.item]
-            // });
 
             return Object.assign({}, state, {
                 [action.item] : !state[action.item]

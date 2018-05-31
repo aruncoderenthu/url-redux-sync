@@ -1,5 +1,4 @@
-// export const TOGGLE_ON = 'TOGGLE_ON';
-// export const TOGGLE_OFF = 'TOGGLE_OFF';
+
 export const TOGGLE = 'TOGGLE';
 export const SET_TEXT = 'SET_TEXT';
 
