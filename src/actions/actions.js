@@ -4,14 +4,6 @@ export const TOGGLE = 'TOGGLE';
 export const SET_TEXT = 'SET_TEXT';
 
 /**
- * Toggle States
- */
-// export const ToggleStates = {
-//   ON: 'ON',
-//   OFF: 'OFF'
-// };
-
-/**
  * Action Creators
  */
 export function toggle(item) {

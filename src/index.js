@@ -7,8 +7,6 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-// import configureStore from './store/configureStore';
-// import INITIAL_STATE from './reducers/initialState';
 import { createStore } from 'redux';
 import { urlReduxSync } from './reducers/reducers';
 
