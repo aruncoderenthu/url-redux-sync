@@ -9,7 +9,7 @@ Proof of concept project built using CRA to demonstrate pre-filtered search idea
 ```npm start```
 
 ## Description
-This project is an personal experiment to get familiar with redux-query-sync. I needed to build a project to demonstrate
+This project is a personal experiment to get familiar with redux-query-sync. I needed to build a project to demonstrate
 to myself that this library could be used for another app idea. I needed to 'see' that the URL parameters sync with the
 Redux store as I am expecting, as the actual redux-query-sync library doesn't appear to contain a working example (only
 instructions). 
