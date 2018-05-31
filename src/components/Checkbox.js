@@ -14,11 +14,13 @@ class Checkbox extends Component {
 
     handleChange(e) {
 
-        if(this.state.toggleOn) {
-            this.props.dispatchToggleOff(e.target);
-        } else {
-            this.props.dispatchToggleOn(e.target);
-        }
+        // if(this.state.toggleOn) {
+        //     this.props.dispatchToggleOff(e.target);
+        // } else {
+        //     this.props.dispatchToggleOn(e.target);
+        // }
+        this.props.dispatchToggle(e.target);
+
         this.setState({
             toggleOn: !(this.state.toggleOn)
         });

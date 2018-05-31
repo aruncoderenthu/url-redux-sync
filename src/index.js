@@ -14,28 +14,25 @@ import { urlReduxSync } from './reducers/reducers';
 
 /*
  * redux-query-sync enhancer
+ *
  */
-const params = {
-  one: {
-      selector: state => state.one,
-      action: value => ({type: 'TEST_ACTION', payload: 'payload'})
-  },
-  two: {
-      selector: state => state.two,
-      action: value => ({type: 'TEST_ACTION', payload: 'payload'})
-  },
-  three: {
-      selector: state => state.three,
-      action: value => ({type: 'TEST_ACTION', payload: 'payload'})
-  }
-};
-const initialTruth = 'location';
-const replaceState = true;
-
 const storeEnhancer = ReduxQuerySync.enhancer({
-    params,
-    initialTruth,
-    replaceState
+    params:{
+        one: {
+            selector: state => state.one,
+            action: value => ({type: 'TOGGLE', item: 'one'})
+        },
+        two: {
+            selector: state => state.two,
+            action: value => ({type: 'TOGGLE', item: 'two'})
+        },
+        three: {
+            selector: state => state.three,
+            action: value => ({type: 'TOGGLE', item: 'three'})
+        }
+    },
+    initialTruth: 'location',
+    replaceState: true
 });
 
 /*

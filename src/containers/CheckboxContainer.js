@@ -9,46 +9,34 @@ class CheckboxContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.dispatchToggleOn = this.dispatchToggleOn.bind(this);
-        this.dispatchToggleOff = this.dispatchToggleOff.bind(this);
+        this.dispatchToggle = this.dispatchToggle.bind(this);
     };
 
-    dispatchToggleOn(e) {
-        console.log('toggleOn: '+e);
+    dispatchToggle(e) {
+        console.log('toggle: '+e);
         let item = e.id;
 
-        this.props.actions.toggleOn(item)
-    }
-
-    dispatchToggleOff(e) {
-        console.log('toggleOff: '+e);
-        let item = e.id;
-
-        this.props.actions.toggleOff(item)
+        this.props.actions.toggle(item)
     }
 
     render() {
-        console.log(this.context.store);
 
         return (
             <div>
                 <Checkbox
-                    initToggleOn={this.props.one === 'ON' ? true : false}
+                    initToggleOn={this.props.one}
                     name={"one"}
-                    dispatchToggleOn={this.dispatchToggleOn}
-                    dispatchToggleOff={this.dispatchToggleOff}
+                    dispatchToggle={this.dispatchToggle}
                 />
                 <Checkbox
-                    initToggleOn={this.props.two === 'ON'? true : false}
+                    initToggleOn={this.props.two}
                     name={"two"}
-                    dispatchToggleOn={this.dispatchToggleOn}
-                    dispatchToggleOff={this.dispatchToggleOff}
+                    dispatchToggle={this.dispatchToggle}
                 />
                 <Checkbox
-                    initToggleOn={this.props.three === 'ON' ? true : false}
+                    initToggleOn={this.props.three}
                     name={"three"}
-                    dispatchToggleOn={this.dispatchToggleOn}
-                    dispatchToggleOff={this.dispatchToggleOff}
+                    dispatchToggle={this.dispatchToggle}
                 />
             </div>
         )

@@ -2,32 +2,23 @@
 import mergeWith from "lodash.mergewith";
 
 import {
-    TOGGLE_ON,
-    TOGGLE_OFF
+    TOGGLE,
 } from '../actions/actions';
-import { ToggleStates } from '../actions/actions';
 
 const initialState = {
-    one: 'ON',
-    two: 'OFF',
-    three: 'ON'
+    one: true,
+    two: false,
+    three: true
 };
 
 export function urlReduxSync(state = initialState, action) {
 
     switch(action.type) {
 
-        case TOGGLE_ON:
+        case TOGGLE:
 
             return mergeWith({}, state, {
-                [action.item] : ToggleStates.ON
-            });
-
-        case TOGGLE_OFF:
-            console.log(action.type);
-
-            return mergeWith({}, state, {
-                [action.item] : ToggleStates.OFF
+                [action.item] : !state[action.item]
             });
 
         case 'TEST':
