@@ -7,18 +7,13 @@ class Checkbox extends Component {
         super(props);
 
         this.state = {
-            toggleOn: props.initToggleOn
+            toggleOn: props.initState
         };
 
     }
 
     handleChange(e) {
 
-        // if(this.state.toggleOn) {
-        //     this.props.dispatchToggleOff(e.target);
-        // } else {
-        //     this.props.dispatchToggleOn(e.target);
-        // }
         this.props.dispatchToggle(e.target);
 
         this.setState({
@@ -45,7 +40,6 @@ class Checkbox extends Component {
 }
 
 Checkbox.propTypes = {
-    initToggleOn: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired
 };
 

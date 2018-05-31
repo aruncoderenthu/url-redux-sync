@@ -1,5 +1,5 @@
 export default {
-    one: true,
-    two: false,
-    three: true
+    // one: false,
+    // two: false,
+    // three: false
 };

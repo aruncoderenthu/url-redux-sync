@@ -3,12 +3,14 @@ import mergeWith from "lodash.mergewith";
 
 import {
     TOGGLE,
+    SET_TEXT
 } from '../actions/actions';
 
 const initialState = {
-    one: true,
+    one: false,
     two: false,
-    three: true
+    three: false,
+    text: ""
 };
 
 export function urlReduxSync(state = initialState, action) {
@@ -17,8 +19,17 @@ export function urlReduxSync(state = initialState, action) {
 
         case TOGGLE:
 
-            return mergeWith({}, state, {
+            // return mergeWith({}, state, {
+            //     [action.item] : !state[action.item]
+            // });
+
+            return Object.assign({}, state, {
                 [action.item] : !state[action.item]
+            });
+
+        case SET_TEXT:
+            return Object.assign({}, state, {
+                text: action.text
             });
 
         case 'TEST':

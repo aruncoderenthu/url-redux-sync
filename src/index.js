@@ -20,16 +20,28 @@ const storeEnhancer = ReduxQuerySync.enhancer({
     params:{
         one: {
             selector: state => state.one,
-            action: value => ({type: 'TOGGLE', item: 'one'})
+            action: value => ({type: 'TOGGLE', item: 'one'}),
+            stringToValue: string => String(string) === "true" || false,
+            defaultValue: false
         },
         two: {
             selector: state => state.two,
-            action: value => ({type: 'TOGGLE', item: 'two'})
+            action: value => ({type: 'TOGGLE', item: 'two'}),
+            stringToValue: string => String(string) === "true" || false,
+            defaultValue: false
         },
         three: {
             selector: state => state.three,
-            action: value => ({type: 'TOGGLE', item: 'three'})
+            action: value => ({type: 'TOGGLE', item: 'three'}),
+            stringToValue: string => String(string) === "true" || false,
+            defaultValue: false
+        },
+        text: {
+            selector: state => state.text,
+            action: value => ({type: 'SET_TEXT', text: value}),
+            defaultValue: "default"
         }
+
     },
     initialTruth: 'location',
     replaceState: true
